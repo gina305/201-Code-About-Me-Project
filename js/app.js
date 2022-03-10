@@ -32,7 +32,7 @@ for (let i = 0; i < totalQs; i++) {
      let userAnswer=prompt(question).toUpperCase();
      userAnswer =userAnswer.split("")[0]
      //Format the user input
-     if(userAnswer==='Y'){
+     if(userAnswer==='Y' || userAnswer==='Yes'){
         userAnswer= 'Y-Yes'
      }else{
         userAnswer= 'N-No' 
