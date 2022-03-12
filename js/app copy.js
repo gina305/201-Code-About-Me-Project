@@ -10,10 +10,10 @@ alert(randomNum);
 // Array index is determined by x,y values. I.e. Question one is indexed at [0,0]
 let questions = [
         ['Have I ever lived in Jamaica? Y-Yes or N-No', 'N-No', 1],
-        ['Do I have a niece? Y-Yes or N-No', 'N-No', 1],
-        ['Do I love my family? Y-Yes or N-No', 'Y-Yes', 1],
+        ['Do I have children? Y-Yes or N-No', 'N-No', 1],
+        ['Was I born in August? Y-Yes or N-No', 'Y-Yes', 1],
         ['Did I serve in the Army? Y-Yes or N-No', 'N-No', 1],
-        ['Do I have a like dogs? Y-Yes or N-No', 'Y-Yes', 1],
+        ['Do i have a like dogs? Y-Yes or N-No', 'Y-Yes', 1],
         ['What number am I thinking of? (4 chances)', randomNum, 4],
         ['What is one of my favorite colors? (6 chances)', 'blue,purple,pink', 6],
 ];
@@ -102,45 +102,49 @@ while (attempt > 0 ){
 
   //---- Logic for question 7 ---- 
    if (attempt === 6){
-     userAnswer=prompt(question).toLowerCase();
-     console.log(answer);
+    var userAnswer=prompt(question + "test");
+    var answerNew = questions[i][1];
      ///Split the answers for comparison
-    let splitAns=answer.split(",");
+     splitAnswers= answerNew.split(",");
 
-     //Define individual answers
-     let answer1 =splitAns[0];
-     let answer2 =splitAns[1];
-     let answer3 =splitAns[2];
+     
+     //Define seperate answers
+     answer1 =splitAnswers[0];
+     answer2 =splitAnswers[1];
+     answer3 =splitAnswers[2];
+     console.log (`Your answers are ${answer1} and ${answer2} and ${answer3}`)
      
     //Function to ask user question
     function qSevenLogic(){
      // Evaluate the user input 
-      let status="end"
        //Guess is too low
-      if (answer != userAnswer && attempt >0){
-         userAnswer=prompt(`Try again. ${question}`).toLowerCase();
-        //Guess is incorrect
-      }else if(userAnswer != answer && attempt===1){
+      if (answer > userAnswer){
+         userAnswer=prompt(`Too Low. ${question}`);
+        //Guess is too high
+      }else if (answer < userAnswer){
+        userAnswer=prompt(`Too High. ${question}`);
+        //Guess is not a number
+        }else if(userAnswer != answer && attempt===1){
      alert(`Your answer is incorrect. The answer is ${answer}.`); 
     };
       //
-    if (userAnswer === answer1 || userAnswer === answer2 || userAnswer === answer3){
+    if (answer === userAnswer){
         alert(`Good guess! You answered ${userAnswer}. The correct answer is ${answer}!`);
         correct++; 
-      attempt=0;
-        }
+    }
     };
    
 while (attempt > 0 ){
   attempt--;
 
- 
-       if(attempt>0 && userAnswer != answer){
+  if(userAnswer != answer && attemptNum ===6){
+       if(attempt>0){
        qSevenLogic(); }
-    else if(userAnswer != answer1 || userAnswer != answer2 || userAnswer != answer3 && attempt === 0){
+    else if(userAnswer != answer){
      alert(`Your answer is incorrect. The answer was ${answer}.`); 
       break
     };
+  };
     };
   };
 };
