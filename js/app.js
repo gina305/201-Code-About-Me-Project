@@ -103,7 +103,8 @@ while (attempt > 0 ){
   //---- Logic for question 7 ---- 
    if (attempt === 6){
      userAnswer=prompt(question).toLowerCase();
-     console.log(answer);
+     
+     
      ///Split the answers for comparison
     let splitAns=answer.split(",");
 
