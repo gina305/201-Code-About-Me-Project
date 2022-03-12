@@ -5,7 +5,6 @@ let userName=prompt(`Welcome to my site! What\'s your name?`);
 
 let randomNum= Math.floor(Math.random() * 10)
 
-alert(randomNum);
 //Define an array to hold questions, answers and attempts
 // Array index is determined by x,y values. I.e. Question one is indexed at [0,0]
 let questions = [
