@@ -125,7 +125,7 @@ while (attempt > 0 ){
     };
       //
     if (userAnswer === answer1 || userAnswer === answer2 || userAnswer === answer3){
-        alert(`Good guess! You answered ${userAnswer}. The correct answer is ${answer}!`);
+        alert(`Good guess! You answered ${userAnswer}. The correct answers include ${answer}!`);
         correct++; 
       attempt=0;
         }
@@ -138,7 +138,7 @@ while (attempt > 0 ){
        if(attempt>0 && userAnswer != answer){
        qSevenLogic(); }
     else if(userAnswer != answer1 || userAnswer != answer2 || userAnswer != answer3 && attempt === 0){
-     alert(`Your answer is incorrect. The answer was ${answer}.`); 
+     alert(`Your answer is incorrect. The answers were ${answer}.`); 
       break
     };
     };
