@@ -83,7 +83,6 @@ for (let i = 0; i < totalQs; i++) {
     };
 
     //Run the function again if another attempt exists
-   // answer =parseInt(answer)
    
 while (attempt > 0 ){
   attempt--;
